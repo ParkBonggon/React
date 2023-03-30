@@ -1,0 +1,47 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-header);
+    border-bottom: 5px solid #d8dffa;
+    padding: 0 0.5rem;
+}
+
+.toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: var(--color-text);
+    transition : all 150ms ease-out;
+    color: var(--color-text);
+}
+
+.toggle:hover {
+    transform: scale(1.1);
+}
+
+.filters{
+    display: flex;
+}
+
+.filter{
+    font-size: 1rem;
+    margin: 0.5rem;
+    text-transform: capitalize;
+    background-color: transparent;
+    opacity: 0.8;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.filter:hover,
+.filter.selected {
+    opacity: 1;
+}
+
+.filter.selected::after{
+    content: '';
+    display: block;
+    margin-top: 0;
+    border: 1px solid rgb(55 48 163);
+}

@@ -1,20 +1,20 @@
 import './App.css';
-import styled from 'styled-components';
+import TodoList from './component/TodoList';
+import { useState } from 'react';
+import Header from './component/Header';
+import { DarkModeProvider } from './context/DarkModeContext';
 
-const Maybe = styled.div`
-  background-color: #ddd;
-  width:  1000px;
-  height: 500px;
-`;
+const filters = ['all', 'active', 'completed'];
 
 function App() {
+  const [filter, setFilter] =useState(filters[0]);
+  
   return (
-    <Maybe>
-      ks
-    </Maybe>
+    <DarkModeProvider>
+      <Header   filters={filters} filter={filter} onFilterChange={setFilter}/>
+      <TodoList filter={filter} />
+    </DarkModeProvider>
   );
 }
-
-
 
 export default App;
